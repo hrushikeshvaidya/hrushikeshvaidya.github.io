@@ -60,6 +60,22 @@
     }
 }
 
+/* Used to animate the text inside the card */
+@keyframes card-highlight-font {
+    from {
+        color: rgb(0,0,0);
+        font-size: 2rem;
+        text-shadow: none;
+        background: rgba(255, 255, 255, 0);
+    }
+    to {
+        color: rgb(0, 0, 0);
+        font-size: 2.2rem;
+        text-shadow: 3px 3px rgb(255, 255, 255);
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
 body {
     background-image: linear-gradient(to right, #e9920f 0, #ff9900 100%);
     background-size: 0 50%;
@@ -214,6 +230,9 @@ hr {
     /* background: linear-gradient(to left, #e3ffd1, #c78d4a); */
     background-color: rgb(235, 235, 235);
 
+    color: black;
+    text-decoration: none;
+
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
@@ -223,6 +242,11 @@ hr {
 
     height: 100px;
     padding-right: 50px;
+}
+
+.barcode a {
+    color: black;
+    text-decoration: none;
 }
 
 .second-page {
@@ -253,6 +277,21 @@ hr {
     font-size: 2rem;
 }
 
+.with-padding-2 {
+    margin: 30px 50px 140px 50px;
+    padding: 150px 0px 150px 0px;
+    background: rgba(255, 255, 255, 0);
+    border: 3px solid black;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    font-family: 'Raleway', sans-serif;
+    color: black;
+    font-size: 2rem;
+}
+
 .certificates {
     background: linear-gradient(to right, #26c5ff, #50fff0);
 
@@ -266,29 +305,14 @@ hr {
     color: black;
 }
 
-.with-padding-2 {
-    margin: 20px 50px;
-    padding: 150px 0px;
-    background: rgba(255, 255, 255, 0);
-    border: 3px solid black;
-
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-
-    font-family: 'Raleway', sans-serif;
-    color: black;
-    font-size: 2rem;
-}
-
 .with-padding:hover{
-    animation-name: card-highlight;
+    animation-name: card-highlight-font;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
 }
 
-.with-padding-2:hover {
-    animation-name: card-highlight;
+.with-padding-2:hover{
+    animation-name: card-highlight-font;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
 }
