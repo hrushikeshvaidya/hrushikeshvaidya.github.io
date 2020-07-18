@@ -1,0 +1,245 @@
+/* Used to animate 'currently a ... India' */
+@keyframes colorfadein {
+    from{color:rgba(190, 190, 190, 0);}
+    to{color: rgb(192, 192, 192);}
+}
+
+/* Used to slide up social links */
+@keyframes table-slide-up {
+    from {padding-top: 800px;}
+    to {padding-top: 0px;}
+}
+
+/* Used to animate social links on hover */
+@keyframes social-links-hov {
+    from {color: rgb(97, 97, 97)}
+    to {color: rgb(196, 196, 196);}
+}
+
+/* Used by the highlighted text 'student at NIT' */
+@keyframes white-to-grey-to-dark {
+    0% {
+        background-color: rgb(151, 255, 255);
+    }
+    40% {
+        background-color: rgb(94, 94, 94);
+    }
+    100% {
+        background-color: rgb(230, 230, 230);
+    }
+}
+
+/* Used to animate the Capital letters H and V */
+@keyframes colorfadein-transparent {
+    from{color:rgba(0, 0, 0, 0);}
+    to{color: rgb(134, 134, 134);}
+}
+
+/* Used to animate my name */
+@keyframes colorfadein-transparent-name {
+    from{color:rgba(224, 224, 224, 0);}
+    to{color: rgb(223, 223, 223);}
+}
+
+/* Used to animate the cards in the second half of the page */
+@keyframes card-highlight {
+    from {
+        color: rgb(0,0,0);
+        font-size: 2rem;
+        background: rgba(255, 255, 255, 0);
+    }
+    to {
+        color: rgb(255, 255, 255);
+        font-size: 2.2rem;
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Used to animate the text inside the card */
+@keyframes card-highlight-font {
+    from {
+        color: rgb(0,0,0);
+        font-size: 2rem;
+        text-shadow: none;
+        background: rgba(255, 255, 255, 0);
+    }
+    to {
+        color: rgb(0, 0, 0);
+        font-size: 2.2rem;
+        text-shadow: 3px 3px rgb(255, 255, 255);
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
+body {
+    background: linear-gradient(to right, #000000, #434343);
+    background-size: 0 50%;
+    background-repeat: no-repeat;
+    transition: background .5s;
+    background-position: 0 0.2em;
+}
+
+hr {
+    border-top: 1px solid black;
+}
+
+.col-xl-9, .col-xl-3, .col-md-12 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.introduction {
+    background: linear-gradient(to bottom right, #000000, #575757);
+}
+
+.jumbo {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    color: black;
+}
+
+.different-font {
+    color: rgba(0, 0, 0, 0);
+    font-size: 180px;
+    font-family: 'Fredericka the Great', sans-serif;
+    font-weight: 400;
+
+    animation-name: colorfadein-transparent;
+    animation-delay: 0.5s;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.jumbo h1 {
+    font-size: 100px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0);
+
+    padding-top: 25%;
+    /* padding-bottom: 25%; */
+    padding-left: 50px;
+    margin-bottom: 0px;
+
+    animation-name: colorfadein-transparent-name;
+    animation-delay: 1s;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.jumbo p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    /* font-weight: 800; */
+    margin-top: 0px;
+    padding-left: 65px;
+    padding-bottom: 25%;
+    color: rgba(255, 255, 255, 0);
+
+    animation-name: colorfadein;
+    animation-delay: 1.5s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.text-stand-out {
+    /* background-color: rgb(255, 255, 255); */
+    color: #242424;
+
+    animation-name: white-to-grey-to-dark;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    /* box-shadow: -2px 0px 5px black; */
+    /* height: 153%; */
+    font-size: 2.5rem;
+    /* padding-top: 20px; */
+    padding-left: 50px;
+}
+
+.social-links i {
+    font-size: 5rem;
+    color: rgb(199, 199, 199);
+}
+
+.social-links table {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    /* font-weight: 600; */
+    font-size: 2rem;
+
+    padding-top: 800px;
+
+    animation-name: table-slide-up;
+    animation-delay: 0.7s;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier(.11,.56,.28,.99);
+    animation-fill-mode: forwards;
+}
+
+.social-links table td {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+    text-align: center;
+}
+
+
+.social-links table tr a {
+    text-decoration: none;
+    color: rgb(100, 100, 100);
+    padding-left: 5px;
+    padding-top: 3px;
+}
+
+.social-links table tr a:hover {
+    text-decoration: none;
+    animation-name: social-links-hov;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.col-md-12 {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.barcode {
+    /* background: linear-gradient(to left, #e3ffd1, #c78d4a); */
+    background-color: rgb(235, 235, 235);
+
+    color: black;
+    text-decoration: none;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+
+    font-family: 'Libre Barcode 39';
+    font-size: 80px;
+
+    height: 100px;
+    padding-right: 50px;
+}
+
+.barcode a {
+    color: black;
+    text-decoration: none;
+}
