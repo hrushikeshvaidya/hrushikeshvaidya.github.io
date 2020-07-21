@@ -1,7 +1,7 @@
 /* Used to animate 'currently a ... India' */
 @keyframes colorfadein {
     from{color:rgba(190, 190, 190, 0);}
-    to{color: rgb(192, 192, 192);}
+    to{color: rgb(228, 228, 228);}
 }
 
 /* Used to slide up social links */
@@ -32,7 +32,7 @@
 /* Used to animate the Capital letters H and V */
 @keyframes colorfadein-transparent {
     from{color:rgba(0, 0, 0, 0);}
-    to{color: rgb(192, 192, 192);}
+    to{color: rgb(212, 212, 212);}
 }
 
 /* Used to animate my name */
@@ -71,31 +71,12 @@
     }
 }
 
-/* Used to animate the project cards */
-@keyframes padding-inc {
-    from {padding: 0px;}
-    to {padding: 7px;}
-}
-
 body {
     background: linear-gradient(to right, #000000, #434343);
     background-size: 0 50%;
     background-repeat: no-repeat;
     transition: background .5s;
     background-position: 0 0.2em;
-}
-
-.container-fluid {
-    padding: 0px;
-    margin: 0px;
-}
-
-.row {
-    padding: 0px;
-    margin: 0px;
-
-    flex-flow: row wrap;
-    justify-content: center;
 }
 
 hr {
@@ -108,7 +89,7 @@ hr {
 }
 
 .introduction {
-    background: linear-gradient(130deg, #ff3503, black, #00d9ff);
+    background: linear-gradient(to bottom left, #670fff, #b89aff);
 }
 
 .jumbo {
@@ -191,7 +172,7 @@ hr {
 
 .social-links i {
     font-size: 5rem;
-    color: rgb(199, 199, 199);
+    color: rgb(230, 230, 230);
 }
 
 .social-links table {
@@ -265,9 +246,8 @@ hr {
     text-decoration: none;
 }
 
-.background-encapsulate {
-    /* background: linear-gradient(to bottom, #ff3503, black, #00d9ff); */
-    background-color: rgb(235, 235, 235);
+hr {
+    background: linear-gradient(130deg, #ff3503, black, #00d9ff);
 }
 
 .footer {
@@ -299,7 +279,7 @@ hr {
 
 .footer-links a {
     text-decoration: none;
-    color: rgb(54, 54, 54);
+    color: white;
     /* margin-top: 30px; */
 
     font-family: 'Raleway', sans-serif;
@@ -310,85 +290,4 @@ hr {
     animation-name: card-highlight-font;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
-}
-
-.project-head {
-    color: rgb(75, 75, 75);
-    font-family: 'Orbitron', sans-serif;
-
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-
-.borderLeftRight {
-    /* display: inline-block; */
-    /* position: relative; */
-    color: hsl(222, 25%, 14%);
-  }
-  
-.borderLeftRight::after {
-    content: '';
-    /* position: absolute; */
-    width: 50%;
-    transform: scaleX(0);
-    height: 15px;
-    bottom: 0;
-    left: 50%;
-    background-color: rgb(230, 20, 20);
-    transform-origin: bottom right;
-    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-}
-  
-.borderLeftRight:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-  
-
-.project-head h1 {
-    margin: 70px;
-    margin-top: 120px;
-    margin-bottom: -15px;
-    font-size: 110px;
-
-    z-index: 2;
-}
-
-.some-space-above {
-    margin-top: 110px;
-}
-
-.project-image {
-    margin: 30px 0px 30px 50px;
-    padding: 0px;
-
-    color: rgb(148, 148, 148);
-    font-family: 'Raleway', sans-serif;
-    font-size: 2.5rem;
-
-    border: 2px solid black;
-}
-
-.project-image:hover {
-    animation-name: padding-inc;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-}
-
-.project-desc {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-
-    color: rgb(37, 37, 37);
-    font-family: 'Raleway', sans-serif;
-    font-size: 2rem;
-
-    padding: 50px;
-}
-
-.project-desc a {
-    color: rgb(240, 60, 60);
 }

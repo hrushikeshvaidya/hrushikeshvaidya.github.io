@@ -66,8 +66,8 @@
     to {
         color: rgb(0, 0, 0);
         font-size: 2.2rem;
-        text-shadow: 3px 3px rgb(255, 255, 255);
-        background: rgba(255, 255, 255, 0.3);
+        text-shadow: 3px 3px rgb(196, 196, 196);
+        background: rgba(255, 255, 255, 0.377);
     }
 }
 
@@ -237,9 +237,57 @@ hr {
 
     height: 100px;
     padding-right: 50px;
+
+    box-shadow: 0px 1px 5px rgb(0,0,0);
 }
 
 .barcode a {
     color: black;
     text-decoration: none;
+}
+
+hr {
+    background: linear-gradient(130deg, #ff3503, black, #00d9ff);
+}
+
+.footer {
+    margin-top: 60px;
+    border-top: 1px solid black;
+    background-color: rgb(211, 211, 211);
+}
+
+.footer-links {
+    margin-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 27px;
+}
+
+.footer-links ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: stretch;
+
+    list-style-type: none;
+}
+
+.footer-links li {
+    /* border: 2px solid black; */
+    padding: 50px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    /* margin-top: 30px; */
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+}
+
+.footer-links a:hover {
+    animation-name: card-highlight-font;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
 }
