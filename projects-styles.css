@@ -191,7 +191,7 @@ hr {
 
 .social-links i {
     font-size: 5rem;
-    color: rgb(199, 199, 199);
+    color: rgb(214, 214, 214);
 }
 
 .social-links table {
@@ -222,6 +222,7 @@ hr {
 
 .social-links table tr a {
     text-decoration: none;
+    font-weight: 200;
     color: rgb(173, 173, 173);
     padding-left: 5px;
     padding-top: 3px;
@@ -234,6 +235,50 @@ hr {
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
 }
+
+/* Used to animate the chevron */
+@keyframes chevron {
+    0% {opacity: 0;}
+    33% {opacity: 1;}
+    66% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.chevrons {
+    margin-top: -12%;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 50px;
+
+}
+
+.arrowScrollDown svg {
+    opacity: 0;
+    animation: arrowAnimation 1.8s infinite ease-out;
+    animation-delay: 2.7s;
+}
+
+
+@keyframes arrowAnimation {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0
+    }
+    30% {
+      opacity: 1
+    }
+    60% {
+      opacity: 1
+    }
+    to {
+      -webkit-transform: translateY(10px);
+      transform: translateY(10px);
+      opacity: 0
+    }
+  }
 
 .col-md-12 {
     display: flex;
