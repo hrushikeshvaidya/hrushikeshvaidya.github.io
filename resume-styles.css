@@ -55,22 +55,6 @@
     }
 }
 
-/* Used to animate the text inside the card */
-@keyframes card-highlight-font {
-    from {
-        color: rgb(0,0,0);
-        font-size: 2rem;
-        text-shadow: none;
-        background: rgba(255, 255, 255, 0);
-    }
-    to {
-        color: rgb(0, 0, 0);
-        font-size: 2.2rem;
-        text-shadow: 3px 3px rgb(196, 196, 196);
-        background: rgba(255, 255, 255, 0.377);
-    }
-}
-
 body {
     background: linear-gradient(to right, #000000, #434343);
     background-size: 0 50%;
@@ -81,6 +65,11 @@ body {
 
 hr {
     border-top: 1px solid black;
+}
+
+.container-fluid, .row {
+    margin: 0px;
+    padding: 0px;
 }
 
 .col-xl-9, .col-xl-3, .col-md-12 {
@@ -287,7 +276,7 @@ hr {
 }
 
 .footer {
-    margin-top: 60px;
+    box-shadow: 0px 0px 7px black;
     border-top: 1px solid black;
     background-color: rgb(211, 211, 211);
 }
@@ -295,7 +284,7 @@ hr {
 .footer-links {
     margin-right: 50px;
     padding-top: 30px;
-    padding-bottom: 27px;
+    padding-bottom: 15px;
 }
 
 .footer-links ul{
@@ -310,7 +299,7 @@ hr {
 
 .footer-links li {
     /* border: 2px solid black; */
-    padding: 50px;
+    padding: 25px 50px;
 }
 
 .footer-links a {
@@ -321,8 +310,168 @@ hr {
     font-size: 1.5rem;
 }
 
-.footer-links a:hover {
-    animation-name: card-highlight-font;
-    animation-duration: 0.3s;
+.circleScaleBtn {
+    padding: 12px 24px;
+    background-color: rgb(211, 211, 211);
+    color: rgb(109, 104, 209);
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.circleScaleBtn span {
+    z-index: 1;
+    position: relative;
+}
+
+.circleScaleBtn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 200%;
+    border-radius: 50%;
+    transform: translate3d(-50%,-50%,0) scale3d(0,0,0);
+    transition: opacity .4s cubic-bezier(.19,1,.22,1),transform .75s cubic-bezier(.19,1,.22,1);
+    background-color: rgb(118, 30, 219);
+    opacity: 0;
+}
+
+.circleScaleBtn:hover::before {
+    opacity: 1;
+    transition-duration: .85s;
+    transform: translate3d(-50%,-50%,0) scale3d(1,1,1)
+}
+
+
+.resume-container {
+    background: url('paper-1468878.jpg');
+    background-attachment: fixed;
+    background-size: contain;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 100px;
+}
+
+.resume-page {
+    background: rgb(247, 247, 247);
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+
+    padding: 0px 0px;
+}
+
+.header h1{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+
+    border-top: 7px solid rgb(112, 30, 206);
+    padding-left: 50px;
+    padding-top: 70px;
+    padding-bottom: -7px;
+    background: rgb(216, 216, 216);
+}
+
+.header p {
+    margin-top: 20px;
+    border-left: 5px solid rgb(112, 30, 206);
+    margin-left: 60px;
+    padding-left: 7px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.35rem;
+    line-height: 1.5rem;
+}
+
+.resume-content {
+    width: 100%;
+}
+
+.resume-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.2rem;
+
+    border-bottom: 2px solid rgb(112, 30, 206);
+    padding-left: 50px;
+    padding-top: 45px;
+}
+
+.resume-content h3 {
+    margin-top: 10px;
+    padding-left: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.resume-content p {
+    margin-top: 50px;
+    border-left: 5px solid rgb(112, 30, 206);
+    margin-left: 60px;
+    padding-left: 7px;
+    padding-right: 60px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.35rem;
+    line-height: 1.5rem;
+}
+
+.resume-content a {
+    color: rgb(112, 30, 206);
+}
+
+.resume-content .cert-details {
+    margin-top: 10px;
+    margin-left: 70px;
+    margin-bottom: -30px;
+    line-height: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.download-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 50px;
+
+    background-color: rgb(155, 71, 252);
+
+    box-shadow: 0px -1px 15px black;
+}
+
+.down-button {
+    display: flex;
+    justify-content: center;
+    padding: 15px 50px;
+    /* margin-right: 100px; */
+    margin-left: -3px;
+
+    border: 2px solid black;
+}
+
+.download-buttons a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+}
+
+.download-buttons a:hover {
+    animation-name: social-links-hov;
+    animation-duration: 0.2s;
     animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.svg-space-left {
+    margin-left: 10px;
+}
+
+.resume-content .no-left-border {
+    border-left: 0px solid black;
 }
