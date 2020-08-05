@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guess the RGB</title>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+        <link rel='stylesheet' type='text/css' href='colorGameStyles.css'>   
+    </head>
+    <body>
+        <div id='top'></div>
+        <div class='header'>
+            <h1 id='great'>The Great</h1><h1><span class='color-code'>RGB</span></h1><h1 id='guessing-game'>Guessing Game</h1>
+        </div>
+        <div class='settings-bar'>
+            <a href='#top' class='arrowFromLeft'><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <path d="M9 11l-4 4l4 4m-4 -4h11a4 4 0 0 0 0 -8h-1" />
+              </svg> <span id='play-again'> Play again?</span></a>
+            <span id='message'>Click A Square</span>
+            <a href='#top'><span id='difficulty'><span class='borderMarker'><span id='easy'>Easy</span></span> | <span class='borderMarker'><span id='hard'>Hard</span></span></span></a>
+        </div>
+        <div class='color-container'>
+            <div class='color'></div>
+            <div class='color'></div>
+            <div class='color'></div>
+            <div class='color'></div>
+            <div class='color'></div>
+            <div class='color'></div>
+        </div>
+        <div class='copyright'>
+            <p>Hrushikesh</p>
+        </div>
+        <div class='info'>
+            <h1 class='borderLeftRight'><span>How to Play</span></h1>
+            <h3>The RGB Color Model</h3>
+            <p>
+                The goal of the game is to guess the color of the button represented by the RGB value shown on the screen.
+                Play in easy mode to get three color options to choose from, play in hard mode to get 6 options
+                to choose from.
+            </p>
+            <p>
+                The RGB color model helps us represent all possible colors as a set of 3 numbers.
+                Any color imaginable can be represented as a set of three values - (R, G, B). Where R is the amount of "red" 
+                in the color, G is the amount of "green" in the color, and B is the amount of "blue" in the color.
+                R, G, and B can only take values between 0 and 255, however. <br><br>
+                All the visible colors are made of some fraction of these RGB values. White, for example, is 
+                (255, 255, 255), all R, G, and B values are maximum. Black is just (0, 0, 0). Similarly, red is 
+                represented as (255, 0, 0), green as (0, 255, 0), and blue as (0, 0, 255).
+            </p>
+        </div>
+    </body>
+    <script src='colorGame.js' type='text/javascript'></script> 
+</html>
