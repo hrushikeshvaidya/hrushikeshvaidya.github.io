@@ -71,8 +71,8 @@
     to {
         color: rgb(0, 0, 0);
         font-size: 2.2rem;
-        text-shadow: 3px 3px rgb(173, 173, 173);
-        background: rgba(255, 255, 255, 0.3);
+        text-shadow: 3px 3px rgb(145, 145, 145);
+        background: rgba(50, 231, 255, 0.61);
     }
 }
 
@@ -88,7 +88,7 @@ hr {
     border-top: 1px solid black;
 }
 
-.col-xl-9, .col-xl-3, .col-md-12 {
+.col-xl-9, .col-xl-3, .col-md-12, .row, .container-fluid {
     margin: 0px;
     padding: 0px;
 }
@@ -290,7 +290,8 @@ hr {
 }
 
 .second-page {
-    background: linear-gradient(to right, #26c5ff, #50fff0);
+    /* background: linear-gradient(to right, #26c5ff, #50fff0); */
+    background-color: rgb(119, 119, 119);
 
     display: flex;
     flex-flow: row wrap;
@@ -303,55 +304,24 @@ hr {
 }
 
 .with-padding {
-    margin: 90px 50px;
-    padding: 100px 0px;
+    margin: 0;
+    padding: 50px 0px;
     background: rgba(255, 255, 255, 0);
-    border: 3px solid black;
+    border-left: 1px solid black;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 
     font-family: 'Raleway', sans-serif;
-    color: black;
-    font-size: 2rem;
 }
 
-.with-padding-2 {
-    margin: 30px 50px 140px 50px;
-    padding: 100px 0px 100px 0px;
-    background: rgba(255, 255, 255, 0);
-    border: 3px solid black;
-
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-
-    font-family: 'Raleway', sans-serif;
-    color: black;
-    font-size: 2rem;
+.with-padding h1 {
+    font-size: 1.5rem;
 }
 
-.certificates {
-    background: linear-gradient(to right, #26c5ff, #50fff0);
-
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-
-.certificates a {
-    text-decoration: none;
-    color: black;
-}
 
 .with-padding:hover{
-    animation-name: card-highlight-font;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-}
-
-.with-padding-2:hover{
     animation-name: card-highlight-font;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
@@ -365,8 +335,8 @@ hr {
 
 .footer-links {
     margin-right: 50px;
-    padding-top: 30px;
-    padding-bottom: 27px;
+    padding-top: 20px;
+    padding-bottom: 5px;
 }
 
 .footer-links ul{
@@ -381,7 +351,8 @@ hr {
 
 .footer-links li {
     /* border: 2px solid black; */
-    padding: 50px;
+    padding: 15px;
+    font-size: 1.2rem;
 }
 
 .footer-links a {
@@ -389,21 +360,124 @@ hr {
     color: black;
 
     font-family: 'Raleway', sans-serif;
-    font-size: 1.5rem;
 }
 
-.footer-links a:hover {
-    animation-name: card-highlight-font;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
+.circleScaleBtn {
+    padding: 12px 24px;
+    background-color: rgb(211, 211, 211);
+    color: rgb(109, 104, 209);
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.circleScaleBtn span {
+    z-index: 1;
+    position: relative;
+}
+
+.circleScaleBtn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 200%;
+    border-radius: 50%;
+    transform: translate3d(-50%,-50%,0) scale3d(0,0,0);
+    transition: opacity .4s cubic-bezier(.19,1,.22,1),transform .75s cubic-bezier(.19,1,.22,1);
+    background-color: rgb(119, 119, 119);
+    opacity: 1;
+}
+
+.circleScaleBtn:hover::before {
+    opacity: 1;
+    transition-duration: .85s;
+    transform: translate3d(-50%,-50%,0) scale3d(1,1,1)
 }
 
 .copyright {
     display: flex;
     justify-content: center;
-    padding-top: 15px;
+    padding-top: 10px;
     background-color: rgb(56, 56, 56);
 
-    color: white;
+    color: rgb(192, 192, 192);
     font-family: 'Raleway', sans-serif;
+}
+
+.showcase {
+    display: flex;
+    flex-flow: column wrap;
+
+    box-shadow: 0px -1px 10px black;
+
+    background-color: rgb(53, 53, 53);
+
+    padding: 40px 40px;
+}
+
+.showcase h1 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: rgb(185, 185, 185);
+
+    text-decoration: underline;
+    text-align: center;
+}
+
+.showcase-item {
+    padding: 40px;
+    margin: 30px 0px 10px;
+    border-radius: 10px;
+
+    color: rgb(184, 184, 184);
+
+    width: 90%;
+}
+
+@keyframes shadow {
+    to{box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);}
+}
+.showcase-item:hover {
+    animation-name: shadow;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.showcase-item h2 {
+    border-left: 3px solid rgb(0, 204, 255);
+    padding-left: 10px;
+    padding-bottom: 5px;
+
+    color: rgb(111, 193, 240);
+
+    font-family: 'Raleway', sans-serif;
+}
+
+.showcase-item h3 {
+    font-family: 'Raleway', sans-serif;
+    color: rgb(184, 184, 184);
+    font-size: 1.5rem;
+}
+
+.showcase-item a:hover {
+    text-decoration: underline rgb(0, 204, 255);
+}
+
+.showcase-item p a {
+    color: rgb(111, 193, 240);
+}
+
+.showcase-item p {
+    font-family: 'Space Mono', monospace;
+}
+
+.rainbow {
+    background: linear-gradient(to right, red, orange, yellow, green, white, violet);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
